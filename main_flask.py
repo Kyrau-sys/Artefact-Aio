@@ -69,5 +69,9 @@ def callback_1():
 def home1():
     return render_template('index_verif.html')
 
+@app.route("/download_update")
+def downloadUpdate():
+    return render_template('index_update.html')
+      
 if __name__ == '__main__':
     app.run(debug=True)

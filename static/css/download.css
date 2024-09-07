@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Robot Mono";
+  src: url(../font/RobotoMono-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "LilitaOne";
+  src: url(../font/1/LilitaOne-Regular.ttf) format('truetype');
+}
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #130042;
+    z-index: -1;
+    overflow:  hidden;
+  }
+  
+  .blour {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .center_block {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  
+  .center {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "logo"
+      "key"
+      "validate";
+    justify-items: center;
+    align-items: center; /*Ajoutez cette ligne*/
+    transform: translateY(-150px);
+  }
+  .center img {
+    margin-bottom: 100px;
+    margin-top: 320px;
+    width: 600px;
+    height: auto;
+    grid-area: logo;
+    z-index: 2;
+  }
+  
+  #left_blour,
+  #right_blour {
+    width: 100px;
+    height: 100vh; /* Ajuste la hauteur à la taille de l'écran */
+    background-color: #42126e;
+    filter: blur(40px);
+    position: fixed; /* Positionne les blurs fixement */
+    z-index: -2;
+  }
+  
+  #left_blour {
+    left: 0; /* Positionne le blur à gauche de l'écran */
+    top: 0; /* Positionne le blur en haut de l'écran */
+    transform: translateX(-50px);
+  }
+  
+  #right_blour {
+    right: 0; /* Positionne le blur à droite de l'écran */
+    top: 0; /* Positionne le blur en haut de l'écran */
+    transform: translateX(50px);
+  }
+  
+  #blourbacklogo {
+    margin-top: 100px;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: #42126e;
+    border-radius: 150px;
+    filter: blur(70px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    grid-area: logo;
+  }
+
+#update_popup{
+    position: absolute;
+    bottom: -30px;
+    height: 60px;
+    width: 600px;
+    margin-top: 100px;
+    background-color: #008d2a7c;
+    border: 4px solid rgba(0, 97, 0, 0.726);
+    border-radius: 150px;
+    animation: heartShadow 2s infinite;
+   
+}
+
+@keyframes heartShadow {
+    0%, 100% {
+        box-shadow: 0px 0px 5px rgba(0, 97, 0, 0.726);
+    }
+
+    50% {
+        box-shadow: 0px 0px 40px rgba(0, 180, 0, 0.678);
+    }
+    
+}
+
+#updateTxt {
+    position: absolute;
+    user-select: none;
+    z-index: 2;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    font-family: "LilitaOne";
+    letter-spacing: 2px;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 97, 0);
+}
+  
+  @keyframes shakeX {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(10px);
+    }
+  }
+  
+  .animate__shakeX {
+    animation: shakeX 1s ease-in-out;
+    background-color: #ffffff48;
+  }
+  
