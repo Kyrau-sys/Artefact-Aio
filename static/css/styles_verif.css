@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "Robot Mono";
+  src: url(../font/RobotoMono-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "LilitaOne";
+  src: url(../font/1/LilitaOne-Regular.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 1900px;
+  height: 950px;
+  background-color: #130042;
+  z-index: -1;
+  overflow:  hidden;
+}
+
+.blour {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.center_block {
+  position: absolute;
+  z-index: 5;
+  width: 80vw;
+  margin: 0 auto;
+  display: center;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.center {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "logo"
+    "key"
+    "validate";
+  justify-items: center;
+  align-items: center; /*Ajoutez cette ligne*/
+  transform: translateY(-150px);
+}
+.center img {
+  margin-bottom: 100px;
+  margin-top: 320px;
+  width: 400px;
+  height: auto;
+  grid-area: logo;
+  z-index: 2;
+}
+
+#left_blour,
+#right_blour {
+  width: 100px;
+  height: 100vh; /* Ajuste la hauteur à la taille de l'écran */
+  background-color: #42126e;
+  filter: blur(40px);
+  position: fixed; /* Positionne les blurs fixement */
+  z-index: -2;
+}
+
+#left_blour {
+  left: 0; /* Positionne le blur à gauche de l'écran */
+  top: 0; /* Positionne le blur en haut de l'écran */
+  transform: translateX(-50px);
+}
+
+#right_blour {
+  right: 0; /* Positionne le blur à droite de l'écran */
+  top: 0; /* Positionne le blur en haut de l'écran */
+  transform: translateX(50px);
+}
+
+#blourbacklogo {
+  margin-top: 100px;
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: #42126e;
+  border-radius: 150px;
+  filter: blur(70px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  grid-area: logo;
+}
+
+#submit_key,
+#input_key {
+  border-radius: 150px;
+}
+
+#myForm {
+  display: grid;
+}
+
+#input_key {
+  text-align: center;
+  grid-area: key;
+  background-color: #ffffff48;
+  outline: none;
+  position: relative;
+  height: 60px;
+  width: 570px;
+  font-family: "Robot Mono";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  grid-area: key;
+  margin-bottom: 20px;
+  border: #ffffff solid 3px;
+  opacity: 50%;
+  padding-inline-start: 30px;
+  padding-inline-end: 30px;
+  z-index: 2;
+  transition: 400ms;
+  color: #ffffff;
+
+}
+
+#submit_key {
+  grid-area: validate;
+  position: absolute;
+  background-color: #cf45d448;
+  border: #cf45d3 solid 2px;
+  width: 300px;
+  height: 40px;
+  margin-top: 100px;
+  font-family: "Robot Mono";
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e2e2e29d;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+#input_key::placeholder {
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.mm {
+  outline: none !important;
+  border: #8c00ff solid 2px !important;
+  background-color: #7a097a42 !important;
+  color: #8c00ff !important;
+}
+
+.nn{
+  outline: none !important;
+  border: #8c00ff solid 3px !important;
+  background-color: #7a097a42 !important;
+  color: #8c00ff !important;
+}
+#input_key.nn1::placeholder{
+  opacity: 90%;
+  color: #8c00ff !important;
+}
+
+
+.succesKey {
+  background-color: rgba(0, 128, 0, 0.500) !important;
+  border: green solid 3px !important;
+  color:green !important;
+}
+
+.errorKey {
+  background-color: rgba(255, 0, 0, 0.500) !important;
+  border: red solid 3px !important;
+  color: red !important;
+}
+
+@keyframes shakeX {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.animate__shakeX {
+  animation: shakeX 1s ease-in-out;
+  background-color: #ffffff48;
+}
+
+.input_key111 {
+  background-color: #ffffff48;
+  outline: none;
+  position: relative;
+  height: 60px;
+  width: 570px;
+  font-family: "Robot Mono";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  grid-area: key;
+  margin-bottom: 20px;
+  border: #ffffff solid 3px;
+  opacity: 50%;
+  padding-inline-start: 30px;
+  padding-inline-end: 30px;
+  z-index: 2;
+  transition: 400ms;
+  color: #ffffff;
+}
+
+.input_check_key_verif {
+  height: 60px !important;
+  width: 0 !important;
+  
+}
+
+.container_popup {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.error_popup {
+  z-index: 20;
+  height: 60px;
+  width: 500px;
+  background-color: rgba(255, 0, 0, 0.500);
+  border: red solid 3px;
+  color: rgba(255, 0, 0, 0.527);
+  border-radius: 150px;
+  text-align: center;
+  position: absolute;
+  position: fixed; /* Utiliser position fixed pour le placer par rapport à l'écran */
+  top: -100px; /* Positionne le haut de l'élément 50px sous le haut de l'écran */
+  left: 50%;
+  transform: translateX(-50%); /* Centre l'élément horizontalement */
+  animation: 1s cubic-bezier(0.82, -0.06, 0, 0.98);
+  transition: 2s;
+  white-space: nowrap;
+}
+
+
+#error_key_p {
+  user-select: none;
+  z-index: 2;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  font-family: "LilitaOne";
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
+
+
+.error_popup_1 {
+  z-index: 20;
+  height: 60px;
+  width: 500px;
+  background-color: rgba(255, 0, 0, 0.171) !important;
+  border: red solid 3px !important;
+  color: rgba(255, 0, 0, 0.603) !important;
+  border-radius: 150px;
+  text-align: justify;
+  position: absolute;
+  position: fixed; /* Utiliser position fixed pour le placer par rapport à l'écran */
+  top: 25px !important; /* Positionne le haut de l'élément 50px sous le haut de l'écran */
+  left: 50%;
+  transform: translateX(-50%); /* Centre l'élément horizontalement */
+  animation: 1s cubic-bezier(0.82, -0.06, 0, 0.98);
+  transition: 2s;
+  white-space: nowrap;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artefact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_verif.css') }}" />
+  </head>
+  <body>
+    <div class="blour">
+      <div id="left_blour"></div>
+      <div class="container_popup">
+        <div id="error_popup" class="error_popup">
+          <p id="error_key_p">the key is wrong</p>
+        </div>
+      </div>
+      <div class="center_block">
+        <div class="center">
+          <img src="{{ url_for('static', filename='image/logo.png') }}" alt="logo" id="logo_img" />
+          <div id="blourbacklogo"></div>
+          <form id="myForm">
+            <div id="enter_key">
+              <input type="text" id="input_key" placeholder="Enter your key" autocomplete="off"/>
+            </div>
+              <input type="submit" value="submit" id="submit_key" />
+          </form>
+          </div>
+        </div>
+      <div id="right_blour"></div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main_verif.js') }}"></script>
+  </body>
+</html>
