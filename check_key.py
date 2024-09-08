@@ -13,7 +13,7 @@ User = None
 def generate_hwid():
     """Génère un HWID basé sur le nom de l'hôte."""
     return hashlib.sha256(platform.node().encode()).hexdigest().strip()
-    
+ 
 
 def validate_license(license_key, HWID):
     """Valide la clé de licence en appelant une API externe."""

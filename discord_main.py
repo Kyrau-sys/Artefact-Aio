@@ -74,7 +74,7 @@ def callback():
     
 
     if is_member:
-        return redirect(f"http://localhost:5000/confirmation_key?code={access_token}")
+        return redirect(f"http://localhost:5000/check_update")
 
     else:
         return redirect('http://localhost:5000')

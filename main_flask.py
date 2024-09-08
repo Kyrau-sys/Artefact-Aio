@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, session, url_for,red
 import requests
 import os 
 from check_key import *
-
+import git
 
 
 
@@ -69,9 +69,39 @@ def callback_1():
 def home1():
     return render_template('index_verif.html')
 
-@app.route("/download_update")
+@app.route("/check_update", methods=['GET'])
 def downloadUpdate():
+    from pull_update import fetch_update
+
+    test = fetch_update()
+    local_commit, remote_commit, repo_url, repo = test
+
+    if local_commit == remote_commit:
+        print("Le dépôt est déjà à jour")
+        # return jsonify({"status": "success"}), 200
+        return redirect("/")
+    else:
+        print("Le dépôt va être mis à jour")
+        # return jsonify({"status": "waiting"}), 200
+        return redirect("/download_update")
+
+    
+@app.route("/download_update")
+def page():
     return render_template('index_update.html')
+    
+def download():
+    from pull_update import repo,repo_url
+    # Faire un git pull
+    print(f"Pull du dépôt {repo_url}...")
+    repo.remotes.origin.pull()
+
+    print("Pull effectué avec succès.")
+    return jsonify({"message": "repo be update", "status": "success"}), 200
+
+    
+
+
       
 if __name__ == '__main__':
     app.run(debug=True)

@@ -82,6 +82,7 @@ form.addEventListener("submit", async function (event) {
 
 // Sur la page d'accueil (localhost), ajouter ce script pour traiter le login et la requête
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("tett");
   const currentURL = window.location.href;
   if (currentURL.includes("confirmation_key")) {
     const inputKey = localStorage.getItem("inputKey1");
@@ -138,6 +139,26 @@ document.addEventListener("DOMContentLoaded", async () => {
       } catch (error) {
         console.log("error 1 :", error);
       }
+    }
+  } else if (currentURL.includes("check_update")) {
+    console.log("tete");
+    try {
+      // Envoyer la requête POST pour le traitement
+      const processResponse = await fetch("/check_update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ key: inputKey }),
+      });
+      const processData = await processResponse.json();
+      console.log(processData);
+
+      if (processData.status === "success") {
+        window.location.href("/confirmation_key");
+      }
+    } catch (error) {
+      console.log("error 1 :", error);
     }
   }
 });
